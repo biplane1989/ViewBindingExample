@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/viewBindingFragment"
+        android:name="com.example.viewbindingexample.viewbinding.ViewBindingFragment"
+        android:label="fragment_view_binding"
+        tools:layout="@layout/fragment_view_binding" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.viewbindingexample.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_viewBindingFragment"
+            app:destination="@id/viewBindingFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_dataBindingFragment"
+            app:destination="@id/dataBindingFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_bindingAdapterFragment"
+            app:destination="@id/bindingAdapterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dataBindingFragment"
+        android:name="com.example.viewbindingexample.databinding.DataBindingFragment"
+        android:label="fragment_data_binding"
+        tools:layout="@layout/fragment_data_binding" />
+    <fragment
+        android:id="@+id/bindingAdapterFragment"
+        android:name="com.example.viewbindingexample.bindingadapter.BindingAdapterFragment"
+        android:label="fragment_binding_adapter"
+        tools:layout="@layout/fragment_binding_adapter" />
+</navigation>
