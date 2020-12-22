@@ -5,9 +5,11 @@
 
     <data>
 
+        <import type="android.R" />
+
         <variable
             name="data"
-            type="com.example.viewbindingexample.databinding.ObservableData" />
+            type="com.example.viewbindingexample.databinding.ObservableViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,19 +19,47 @@
 
         <TextView
             android:id="@+id/tv_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <androidx.core.widget.ContentLoadingProgressBar
-            android:id="@+id/pb_binding"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:max="@{100}"
+            android:layout_marginTop="100dp"
+            android:gravity="center"
+            android:text="@{data.myObservable.title}"
+            android:textSize="35sp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/edt_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="@={data.myObservable.title}"
+            android:textSize="35sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+        <TextView
+            android:id="@+id/tv_count"
+            viewLog="@{data.count}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:hint="0"
+            android:text="@{Integer.toString(data.count)}"
+            android:textColor="@{context.getColor(data.count > 5 ? R.color.holo_red_dark : R.color.black)}"
+            android:textSize="45sp"
+            app:layout_constraintBottom_toTopOf="@id/btn_binding" />
+
+        <Button
+            android:id="@+id/btn_binding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:onClick="@{() -> data.onClick()}"
+            android:text="plush"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:progressScaled="@{data.count}" />
+            app:layout_constraintTop_toTopOf="parent" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
