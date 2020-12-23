@@ -12,7 +12,10 @@ import kotlinx.coroutines.launch
 class BindingViewModel : ViewModel() {
 
     private val _title = MutableLiveData<String>()
-    private val _count = MutableLiveData<Int>()
+    private val _count = MutableLiveData<Int>(0)
+    private val _stats = MutableLiveData<Boolean>(false)
+
+    val count2 = MutableLiveData<Int>(0)
 
     var title: MutableLiveData<String> = MutableLiveData<String>()
         get() {
@@ -24,13 +27,19 @@ class BindingViewModel : ViewModel() {
         }
 
     val count: LiveData<Int> get() = _count
+    val status: LiveData<Boolean> get() = _stats
 
     fun onclick() {
+
+//        Log.d("TAG", "onclick: data Click : "+ data)
         _title.value = "orange"
+        _stats.value = true
+
         _count.value = (_count.value ?: 0) + 1
+        count2.value = (count2.value ?: 0) + 1
     }
 
-//    init {
+    init {
 //        viewModelScope.launch {
 //            while (true) {
 //                delay(1000)
@@ -38,6 +47,7 @@ class BindingViewModel : ViewModel() {
 //                _count.value = (_count.value ?: 0) + 1
 //            }
 //        }
-//    }
+        _title.value = ""
+    }
 
 }

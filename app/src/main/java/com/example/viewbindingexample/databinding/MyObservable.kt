@@ -9,7 +9,7 @@ class MyObservable() : BaseObservable() {
     private var _title: String = ""
 
     @Bindable
-    fun getTitle(): String? {
+    fun getTitle(): String {
         return this._title
     }
 

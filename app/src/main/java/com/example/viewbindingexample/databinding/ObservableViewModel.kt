@@ -10,7 +10,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class ObservableViewModel : ViewModel() {
-    var count = ObservableInt(0)
+    var count = ObservableInt()
     val myObservable = MyObservable()
 
     fun onClick() {
