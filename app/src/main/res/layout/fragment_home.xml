@@ -24,4 +24,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="binding adapter" />
+
+    <Button
+        android:id="@+id/btn_test_viewbinding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="test viewbinding" />
+
+    <Button
+        android:id="@+id/btn_test_binding2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="test databing" />
 </LinearLayout>

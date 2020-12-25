@@ -36,6 +36,16 @@ class HomeFragment : Fragment() {
             val action = HomeFragmentDirections.actionHomeFragmentToBindingAdapterFragment()
             findNavController().navigate(action)
         })
+
+        binding.btnTestViewbinding.setOnClickListener(View.OnClickListener {
+            val action = HomeFragmentDirections.actionHomeFragmentToTestViewBinding()
+            findNavController().navigate(action)
+        })
+
+        binding.btnTestBinding2.setOnClickListener(View.OnClickListener {
+            val action = HomeFragmentDirections.actionHomeFragmentToTestBinding2()
+            findNavController().navigate(action)
+        })
     }
 
     override fun onDestroyView() {

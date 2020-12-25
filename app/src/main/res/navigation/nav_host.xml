@@ -24,6 +24,12 @@
         <action
             android:id="@+id/action_homeFragment_to_bindingAdapterFragment"
             app:destination="@id/bindingAdapterFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_testViewBinding"
+            app:destination="@id/testViewBinding" />
+        <action
+            android:id="@+id/action_homeFragment_to_testBinding2"
+            app:destination="@id/testBinding2" />
     </fragment>
     <fragment
         android:id="@+id/dataBindingFragment"
@@ -35,4 +41,14 @@
         android:name="com.example.viewbindingexample.bindingadapter.BindingAdapterFragment"
         android:label="fragment_binding_adapter"
         tools:layout="@layout/fragment_binding_adapter" />
+    <fragment
+        android:id="@+id/testViewBinding"
+        android:name="com.example.viewbindingexample.test.TestViewBinding"
+        android:label="fragment_test_view_binding"
+        tools:layout="@layout/fragment_test_view_binding" />
+    <fragment
+        android:id="@+id/testBinding2"
+        android:name="com.example.viewbindingexample.TestBinding2"
+        android:label="fragment_test_binding2"
+        tools:layout="@layout/fragment_test_binding2" />
 </navigation>

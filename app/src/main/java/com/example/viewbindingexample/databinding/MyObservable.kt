@@ -19,6 +19,8 @@ class MyObservable() : BaseObservable() {
         if (data.equals("abc")) {
             this._title = "new abc"
         }
+
+        Log.d("TAG1", "setTitle: data : "+ data)
         notifyPropertyChanged(BR.title)
         Log.d("TAG", "setTitle: tow way binding")
     }

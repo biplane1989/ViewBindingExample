@@ -21,13 +21,13 @@ object BindingAdapter {
         }
     }
 
-    @BindingAdapter(value = ["count", "count2"], requireAll = false)
-    @JvmStatic
-    fun formatText(view: TextView, count: Int, count2: Int) {
-        if (count > 5 && count2 > 5) {
-            view.setTextColor(Color.YELLOW)
-        }
-    }
+//    @BindingAdapter(value = ["count", "count2"], requireAll = false)
+//    @JvmStatic
+//    fun formatText(view: TextView, count: Int, count2: Int) {
+//        if (count > 5 && count2 > 5) {
+//            view.setTextColor(Color.YELLOW)
+//        }
+//    }
 
     @BindingAdapter("viewLog")
     @JvmStatic
